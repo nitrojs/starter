@@ -6,7 +6,7 @@
     "dev": "nitro dev"
   },
   "devDependencies": {
-    "h3": "^1.15.4",
-    "nitropack": "^2.12.4"
+    "h3": "beta",
+    "nitro": "npm:nitro-nightly"
   }
 }

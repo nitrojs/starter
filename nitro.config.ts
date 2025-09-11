@@ -1,4 +1,4 @@
-import { defineNitroConfig } from "nitropack/config"
+import { defineNitroConfig } from "nitro/config"
 
 // https://nitro.build/config
 export default defineNitroConfig({
