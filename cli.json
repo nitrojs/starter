@@ -1,0 +1,6 @@
+{
+  "name": "nitro-with-cli",
+  "defaultDir": "nitro-app",
+  "url": "https://nitro.build",
+  "tar": "https://codeload.github.com/nitrojs/starter/tar.gz/refs/heads/v3-nightly"
+}
