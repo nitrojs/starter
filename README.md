@@ -1,6 +1,6 @@
-# Nitro starter with CLI
+# Nitro starter with Vite
 
-Create your API and deploy it anywhere with this Nitro starter.
+Create your full-stack apps and deploy it anywhere with this Nitro starter.
 
 ## Getting started
 
@@ -15,4 +15,4 @@ npm run dev
 npm run build
 ```
 
-Then checkout the [Nitro documentation](https://nitro.build/deploy) to learn more about the different deployment presets.
+Then checkout the [Nitro documentation](https://v3.nitro.build/deploy) to learn more about the different deployment presets.
