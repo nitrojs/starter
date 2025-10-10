@@ -13,6 +13,7 @@ npm run dev
 
 ```bash
 npm run build
+npm run preview
 ```
 
 Then checkout the [Nitro documentation](https://v3.nitro.build/deploy) to learn more about the different deployment presets.
