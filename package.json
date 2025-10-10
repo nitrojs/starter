@@ -7,7 +7,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "nitro": "npm:nitro-nightly",
+    "nitro": "^3.0.1-alpha.0",
     "vite": "^7.1.9"
   }
 }
