@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "build": "nitro build",
-    "dev": "nitro dev"
+    "dev": "nitro dev",
+    "preview": "npx srvx --prod .output/"
   },
   "devDependencies": {
     "nitro": "npm:nitro-nightly"
