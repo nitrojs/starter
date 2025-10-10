@@ -1,6 +1,6 @@
 # Nitro starter with Vite
 
-Create your full-stack apps and deploy it anywhere with this Nitro starter.
+Create your full-stack apps and deploy it anywhere with this [Vite](https://vite.dev/) + [Nitro](https://v3.nitro.build/) starter.
 
 ## Getting started
 
