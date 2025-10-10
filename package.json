@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "build": "nitro build",
-    "dev": "nitro dev"
+    "dev": "nitro dev",
+    "preview": "node .output/server/index.mjs"
   },
   "devDependencies": {
     "h3": "^1.15.4",
