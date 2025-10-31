@@ -3,7 +3,5 @@ import { nitro } from "nitro/vite";
 
 export default defineConfig({
   plugins: [nitro()],
-  nitro: {
-    preset: "standard",
-  },
+  nitro: {},
 });
