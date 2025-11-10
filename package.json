@@ -6,7 +6,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "nitro": "npm:nitro-nightly@latest",
-    "vite": "npm:rolldown-vite@latest"
+    "nitro": "latest",
+    "vite": "npm:rolldown-vite"
   }
 }
