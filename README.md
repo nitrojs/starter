@@ -1,4 +1,4 @@
-# Nitro starter with CLI
+# Nitro starter
 
 Create your API and deploy it anywhere with this Nitro starter.
 

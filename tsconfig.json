@@ -1,27 +1,8 @@
 {
+  "extends": ["nitro/tsconfig"],
   "compilerOptions": {
-    // Module resolution
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-
-    // JSX
-    "jsx": "preserve",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
-
-    // Core checks
-    "strict": true,
-    "noEmit": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-
-    // Additional safety
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "useUnknownInCatchVariables": true,
-    "noUnusedLocals": true,
+    "paths": {
+      "~/*": ["./*"]
+    }
   }
 }
