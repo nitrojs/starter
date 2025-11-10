@@ -6,7 +6,7 @@
     "preview": "npx srvx --prod .output/"
   },
   "devDependencies": {
-    "nitro": "npm:nitro-nightly@latest",
+    "nitro": "latest",
     "rolldown": "latest"
   }
 }
