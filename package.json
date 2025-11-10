@@ -1,6 +1,5 @@
 {
-  "name": "nitro-app",
-  "private": true,
+  "type": "module",
   "scripts": {
     "build": "vite build",
     "dev": "vite dev",
@@ -8,6 +7,6 @@
   },
   "devDependencies": {
     "nitro": "npm:nitro-nightly@latest",
-    "vite": "latest"
+    "vite": "npm:rolldown-vite@latest"
   }
 }
