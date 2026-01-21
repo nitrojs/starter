@@ -7,6 +7,6 @@
   },
   "devDependencies": {
     "nitro": "latest",
-    "vite": "npm:rolldown-vite"
+    "vite": "beta"
   }
 }
