@@ -3,9 +3,7 @@ import { nitro } from "nitro/vite";
 
 export default defineConfig({
   plugins: [
-    nitro({
-      serverDir: "./server"
-    }),
+    nitro(),
   ],
   resolve: {
     tsconfigPaths: true
