@@ -1,12 +1,15 @@
 {
+  "name": "nitro-starter",
   "type": "module",
   "scripts": {
     "build": "nitro build",
     "dev": "nitro dev",
-    "preview": "npx srvx --prod .output/"
+    "preview": "nitro preview"
+  },
+  "imports": {
+    "#*": "./*"
   },
   "devDependencies": {
-    "nitro": "latest",
-    "rolldown": "latest"
+    "nitro": "latest"
   }
 }
