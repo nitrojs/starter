@@ -1,5 +1,3 @@
-**Important:** Keep `AGENTS.md` updated.
-
 This project is based on [Nitro](https://nitro.build) v3, [h3](https://h3.dev/), [Vite](https://vite.dev/) and [rolldown](https://rolldown.rs/).
 
 ## Project Structure
@@ -11,39 +9,29 @@ This project is based on [Nitro](https://nitro.build) v3, [h3](https://h3.dev/),
 - Path alias `~/*` (tsconfig), use explicit `.ts` extensions
 - Route handlers use `defineHandler()` from `nitro`
 - Route file patterns: `[param]` for dynamic, `[...slug]` for catch-all, `.get.ts`/`.post.ts` for method-specific, `(group)/` ignored in path
-- Environment-specific routes: `.dev.ts` / `.prod.ts` suffixes
 
-## Nitro Usage
+## Nitro Quick Reference
 
-@node_modules/nitro/skills/nitro/docs/TOC.md
+> Use `npx nitro docs` and `npx nitro docs --page` to read the nitro docs.
 
-Use docs from `./node_modules/nitro/skills/nitro/docs/` and prefer over fetching from web.
+**`nitro`** — `defineConfig`, `defineHandler`, `defineMiddleware`, `defineWebSocketHandler`, `definePlugin` (hooks: `request`, `response`, `error`, `close`), `defineRouteMeta`, `defineErrorHandler`, `html`, `HTTPError`, `HTTPResponse`, `fetch`, `serverFetch`
+**`nitro/h3`** — All h3 utilities (re-exported)
+**`nitro/app`** — `useNitroApp()`, `useNitroHooks()`, `getRouteRules()`, `serverFetch()`, `fetch()`
+**`nitro/cache`** — `defineCachedHandler(handler, opts)`, `defineCachedFunction(fn, opts)` (GET/HEAD only)
+**`nitro/context`** — `useRequest()` (experimental, requires async context)
+**`nitro/runtime-config`** — `useRuntimeConfig()`
+**`nitro/storage`** — `useStorage(namespace?)` — KV (`getItem`, `setItem`, `removeItem`, `getKeys`)
+**`nitro/database`** — `useDatabase()` — SQL via `` db.sql`SELECT ...` `` (requires `experimental: { database: true }`)
+**`nitro/task`** — `defineTask({ meta, run })`, `runTask(name, { payload })` (requires `experimental: { tasks: true }`)
+**`nitro/vite`** — `nitro()` Vite plugin (used in `vite.config.ts`)
+**`nitro/vite/runtime`** — `fetchViteEnv()`
+**`nitro/types`** — TypeScript type definitions
 
-**Imports from `nitro`:**
+**Request Lifecycle:** Plugins `request` hook → Static assets → Route rules → Global middleware → Route-scoped middleware → Route handler → Server entry fallback → Renderer (SPA/SSR) → Plugins `response` hook
 
-- `defineHandler(handler)` — Route handler with type inference
-- `definePlugin(plugin)` — Server lifecycle plugin (hooks: `request`, `response`, `error`, `close`)
-- `defineCachedHandler(handler, opts)` / `defineCachedFunction(fn, opts)` — Response/function caching (GET/HEAD only)
-- `defineTask({ meta, run })` — Background tasks (requires `experimental: { tasks: true }`)
+**Config (`nitro.config.ts`):** `routeRules` (per-route headers, redirects, proxy, cache, basicAuth), `$development` / `$production` (env-specific), `storage` + `devStorage` (KV drivers), `prerender: { routes, crawlLinks }`, `traceDeps` (externalize bundler-incompatible deps)
 
-**Imports from `nitro/*`:**
+**`import.meta.*` flags:** `dev`, `preset`, `prerender`, `nitro`, `server`, `client`, `baseURL`
 
-- `useStorage(namespace?)` from `nitro/storage` — KV storage (`getItem`, `setItem`, `removeItem`, `getKeys`)
-- `useDatabase()` from `nitro/database` — SQL via tagged template: `` db.sql`SELECT ...` `` (requires `experimental: { database: true }`)
-- `runTask(name, { payload })` from `nitro/task` — Programmatic task execution
+**Nitro v3 / H3 v2 migration:** `nitropack/runtime/*` → `nitro/*` (e.g. `nitro/storage`, `nitro/task`, `nitro/types`); all h3 imports from `nitro/h3`; `eventHandler()`/`defineEventHandler()` → `defineHandler()`; `createError()`/`H3Error` → `HTTPError`; `event.path` → `event.url.pathname`; `event.web` → `event.req` (native `Request`); body via `event.req.json()`/`.text()`/`.formData()`; headers via `event.req.headers.get()`/`event.res.headers.set()`; status via `event.res.status`; always `return` values (`return redirect(loc, code)`); `sendError()` → `throw HTTPError`; `sendNoContent()` → `return noContent()`; `useAppConfig()` removed.
 
-**Request Lifecycle:**
-
-1. Plugins `request` hook → 2. Static assets → 3. Route rules → 4. Global middleware → 5. Route-scoped middleware → 6. Route handler → 7. Server entry fallback → 8. Renderer (SPA/SSR) → 9. Plugins `response` hook
-
-**Config (`nitro.config.ts`):**
-
-- `routeRules` — Per-route pattern headers, redirects, proxy, cache, basicAuth
-- `$development` / `$production` — Environment-specific config
-- `storage` + `devStorage` — KV driver config with dev overrides
-- `prerender: { routes, crawlLinks }` — Static pre-rendering
-- `traceDeps` — Externalize bundler-incompatible deps (traced into build output)
-
-**`import.meta.*` (server-side flags):** `dev`, `preset`, `prerender`, `nitro`, `server`, `client`, `baseURL`
-
-**Nitro v3 / H3 v2 new conventions:** `nitropack/runtime/*` → `nitro/*` (e.g. `nitro/storage`, `nitro/task`, `nitro/types`); all h3 imports from `nitro/h3`; `eventHandler()`/`defineEventHandler()` → `defineHandler()`; `createError()`/`H3Error` → `HTTPError`; `event.path` → `event.url.pathname`; `event.web` → `event.req` (native `Request`); body via `event.req.json()`/`.text()`/`.formData()`; headers via `event.req.headers.get()`/`event.res.headers.set()`; status via `event.res.status`; always `return` values (`return redirect(loc, code)`); `sendError()` → `throw HTTPError`; `sendNoContent()` → `return noContent()`; `useAppConfig()` removed.
