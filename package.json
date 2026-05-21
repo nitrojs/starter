@@ -6,7 +6,9 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/node": "latest",
     "nitro": "latest",
+    "typescript": "latest",
     "vite": "latest"
   }
 }
