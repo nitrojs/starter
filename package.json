@@ -10,6 +10,8 @@
     "#*": "./*"
   },
   "devDependencies": {
-    "nitro": "latest"
+    "@types/node": "latest",
+    "nitro": "latest",
+    "typescript": "latest"
   }
 }
