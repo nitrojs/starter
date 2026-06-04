@@ -15,4 +15,4 @@ npm run dev
 npm run build
 ```
 
-Then checkout the [Nitro documentation](https://v3.nitro.build/deploy) to learn more about the different deployment presets.
+Then checkout the [Nitro documentation](https://nitro.build/deploy) to learn more about the different deployment presets.
