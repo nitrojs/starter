@@ -1,3 +1,6 @@
-import { setupApp } from "./app";
+const button = document.querySelector<HTMLButtonElement>("#hello")!;
 
-setupApp(document.querySelector<HTMLButtonElement>("#app")!);
+button.addEventListener("click", async () => {
+  const res = await fetch("/api/hello");
+  button.textContent = await res.text();
+});

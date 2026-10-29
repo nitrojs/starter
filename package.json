@@ -1,12 +1,18 @@
 {
+  "name": "nitro-app",
+  "private": true,
   "type": "module",
   "scripts": {
-    "build": "vite build",
     "dev": "vite dev",
+    "build": "vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "nitro": "latest"
+  },
   "devDependencies": {
-    "nitro": "latest",
-    "vite": "beta"
+    "@types/node": "latest",
+    "typescript": "latest",
+    "vite": "^8"
   }
 }
