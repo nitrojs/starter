@@ -1,6 +1,6 @@
 # Nitro starter
 
-Create your API and deploy it anywhere with this Nitro starter.
+Create your API server and deploy it anywhere with this [Nitro](https://nitro.build) + [Rolldown](https://rolldown.rs) starter.
 
 ## Getting started
 
@@ -13,6 +13,7 @@ npm run dev
 
 ```bash
 npm run build
+npm run preview
 ```
 
-Then checkout the [Nitro documentation](https://nitro.build/deploy) to learn more about the different deployment presets.
+Then check out the [Nitro documentation](https://nitro.build/deploy) to learn more about the different deployment presets.

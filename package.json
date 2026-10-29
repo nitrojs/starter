@@ -1,17 +1,18 @@
 {
-  "name": "nitro-starter",
+  "name": "nitro-app",
+  "private": true,
   "type": "module",
   "scripts": {
-    "build": "nitro build",
     "dev": "nitro dev",
+    "build": "nitro build",
     "preview": "nitro preview"
   },
-  "imports": {
-    "#*": "./*"
+  "dependencies": {
+    "nitro": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
-    "nitro": "latest",
+    "rolldown": "^1",
     "typescript": "latest"
   }
 }
