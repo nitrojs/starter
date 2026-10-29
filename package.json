@@ -1,12 +1,18 @@
 {
+  "name": "nitro-app",
+  "private": true,
   "type": "module",
   "scripts": {
-    "build": "nitro build",
     "dev": "nitro dev",
-    "preview": "npx srvx --prod .output/"
+    "build": "nitro build",
+    "preview": "nitro preview"
+  },
+  "dependencies": {
+    "nitro": "latest"
   },
   "devDependencies": {
-    "nitro": "latest",
-    "rolldown": "latest"
+    "@types/node": "latest",
+    "rolldown": "^1",
+    "typescript": "latest"
   }
 }
