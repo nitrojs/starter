@@ -4,5 +4,5 @@ This is a [Nitro](https://nitro.build) v3 server project (built on H3 v2). Nitro
 - `public/` (project root) holds static files.
 - No auto-imports: import `defineHandler`, `HTTPError`, ... from `"nitro"`, H3 utilities (`getQuery`, `readBody`, ...) from `"nitro/h3"`, and your own helpers (e.g. `server/utils/`) with relative imports.
 - Handlers receive an H3 v2 event (`event.req` is a web `Request`, `event.url` a `URL`) and return JSON, a string or a `Response`.
-- Scripts: `dev`, `build` (bundles into `.output/`; run with `node .output/server/index.mjs`), `preview`.
+- Scripts: `dev` and `start` run the `server/` sources directly without a build (experimental `builder: false`; `nitro build` is not supported).
 - Testing: `npx nitro fetch /api/hello` sends one request to the server sources (or to the running dev server) and prints the response, no build needed (curl-like options: `-X`, `-H`, `--json`, `-i`). `npx nitro serve` starts the server from the sources.
